@@ -10,7 +10,7 @@ function handler() {
     serviceFilm(page)
         .then(data => {
             elements.container.insertAdjacentHTML('beforeend', createMarkup(data.results));
-            if (data.page >= 503) {
+            if (data.page >= data.total_pages) {
                 elements.loadBtn.classList.replace('btn-load', 'btn-load-hidden')
             }
         })
